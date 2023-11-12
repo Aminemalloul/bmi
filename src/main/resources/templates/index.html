@@ -1,0 +1,32 @@
+<!-- Author: Mohammed Amine Malloul -->
+<!-- Created 05/11/2023 -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot App</title>
+</head>
+<body>
+<h1>Add Person</h1>
+<form th:object="${newPerson}" th:action="@{/add-person}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:field="*{name}" required>
+    <br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" required>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<h1>Persons</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+    </tr>
+    <tr th:each="person : ${persons}">
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.phoneNumber}"></td>
+    </tr>
+</table>
+</body>
+</html>
