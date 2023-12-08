@@ -2,9 +2,7 @@ package demo.bmi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Author: Mohammed Amine Malloul
@@ -12,7 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 
 
-@Controller
+@RestController
+@CrossOrigin(origins = "https://red-sky-08fa64a03.4.azurestaticapps.net")
 public class PersonController {
     @Autowired
     private PersonRepository personRepository;
